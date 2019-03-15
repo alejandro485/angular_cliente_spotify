@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Información</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <img src="{{track.album.images[0].url}}" class="card-img-top">
+  <br>
+  <p>Nombre: {{track.name}}</p>
+  <p>Album: {{track.album.name}}</p>
+  <p>Fecha de esteno: {{track.album.release_date}}</p>
+  <p>Duracion: {{track.duration_ms | ms2minute}}</p>
+  <p>Artista(s):</p>
+  <ul>
+    <li *ngFor="let artist of track.artists">{{artist.name}}</li>
+  </ul>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="close()">Ok</button>
+</div>

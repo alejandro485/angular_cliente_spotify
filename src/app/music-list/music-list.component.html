@@ -1,0 +1,21 @@
+<div class="row">
+  <form class="form-inline">
+    <div class="form-group mx-sm-4 md-2">
+      <label for="busqueda_id" class="sr-only">Consulta: </label>
+      <input type="text" class="form-control" id="busqueda_id" aria-describedby="busqueda_asd"
+        placeholder="Ej: David Bowie" [(ngModel)]="busqueda" name="input_busqueda">
+    </div>
+    <button type="button" (click)="buscar()" class="btn btn-primary md-2">Buscar</button>
+  </form>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-4" *ngFor="let track of tracks">
+    <div class="card card mb-4 box-shadow" (click)="showInfo(track)">
+      <img src="{{track.album.images[1].url}}" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{track.name}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
